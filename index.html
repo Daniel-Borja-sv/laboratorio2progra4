@@ -13,7 +13,7 @@
 
         body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            background-color: #f4f4f4;
+            background-color: #F5F5DC;
             color: #333;
         }
 
@@ -63,6 +63,15 @@
                 flex: 1 1 100%;
             }
         }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1em;
+        }
     </style>
 </head>
 <body>
@@ -93,15 +102,16 @@
             </div>
 
             <!-- Sección 5-->
-            <div class="carta" id="artista">
+            <div class="carta" id="artista" tabindex="0">
                 <h2>Artista Favorito</h2>
-                <p id="artista-text">Arrastra para ver mi artista favorito</p>
+                <p id="artista-text">Haz clic aquí para ver mi artista favorito</p>
             </div>
 
             <!-- Sección 6-->
             <div class="carta" id="pais">
                 <h2>País que me gustaría visitar</h2>
-                <p id="pais-text">Desliza para ver el país que me gustaría visitar</p>
+                <input type="text" placeholder="Escribe algo..." id="pais-input">
+                <p id="pais-text">Escribe algo para mostrar el país que me gustaría visitar</p>
             </div>
         </div>
     </div>
@@ -127,14 +137,14 @@
             document.getElementById('color-text').textContent = "Mi color favorito es el blanco y negro.";
         });
 
-        // Evento 5: Drag
-        document.getElementById('artista').addEventListener('drag', function() {
-            document.getElementById('artista-text').textContent = "Mi artista favorito es bad bunny.";
+        // Evento 5: Focus
+        document.getElementById('artista').addEventListener('focus', function() {
+        document.getElementById('artista-text').textContent = "Mi artista favorito es Bad Bunny.";
         });
 
-        // Evento 6: Scroll
-        window.addEventListener('scroll', function() {
-            document.getElementById('pais-text').textContent = "Me gustaría visitar Colombia.";
+        // Evento 6: Input
+        document.getElementById('pais').addEventListener('input', function() {
+        document.getElementById('pais-text').textContent = "Me gustaría visitar Colombia.";
         });
     </script>
 </body>
