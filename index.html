@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mi</title>
+    <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .carta {
+            background-color: yellow;
+            border: 1px solid #000;
+            border-radius: 10px;
+            padding: 20px;
+            flex: 1 1 calc(33.333% - 40px);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        
+        h2 {
+            margin-bottom: 10px;
+            font-size: 1.7em;
+        }
+
+        p {
+            font-size: 1.4  em;
+            color: #444040;
+        }
+
+        /* pagina responsiva */
+        @media (max-width: 768px) {
+            .card {
+                flex: 1 1 calc(50% - 40px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="grid">
+            <!-- Sección 1-->
+            <div class="carta" id="hobby">
+                <h2>Hobby Favorito</h2>
+                <p id="hobby-text">Haz clic para ver mi hobby favorito</p>
+            </div>
+
+            <!-- Sección 2-->
+            <div class="carta" id="comida">
+                <h2>Comida Favorita</h2>
+                <p id="comida-text">Pasa el ratón para ver mi comida favorita</p>
+            </div>
+
+            <!-- Sección 3-->
+            <div class="carta" id="pelicula">
+                <h2>Película Favorita</h2>
+                <p id="pelicula-text">Doble clic para ver mi película favorita</p>
+            </div>
+
+            <!-- Sección 4-->
+            <div class="carta" id="color">
+                <h2>Color Favorito</h2>
+                <p id="color-text">Presiona una tecla para ver mi color favorito</p>
+            </div>
+
+            <!-- Sección 5-->
+            <div class="carta" id="artista">
+                <h2>Artista Favorito</h2>
+                <p id="artista-text">Arrastra para ver mi artista favorito</p>
+            </div>
+
+            <!-- Sección 6-->
+            <div class="carta" id="pais">
+                <h2>País que me gustaría visitar</h2>
+                <p id="pais-text">Desliza para ver el país que me gustaría visitar</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+                // Evento 1: Click
+        document.getElementById('hobby').addEventListener('click', function() {
+            document.getElementById('hobby-text').textContent = "Mi hobby favorito es jugar pelota.";
+        });
+
+        // Evento 2: Mouseover
+        document.getElementById('comida').addEventListener('mouseover', function() {
+            document.getElementById('comida-text').textContent = "Mi comida favorita es la pasta.";
+        });
+
+        // Evento 3: Doble Click
+        document.getElementById('pelicula').addEventListener('dblclick', function() {
+            document.getElementById('pelicula-text').textContent = "Mi película favorita es rapido y furiosos 5.";
+        });
+
+        // Evento 4: Keypress
+        document.addEventListener('keypress', function(event) {
+            document.getElementById('color-text').textContent = "Mi color favorito es el blanco y negro.";
+        });
+
+        // Evento 5: Drag
+        document.getElementById('artista').addEventListener('drag', function() {
+            document.getElementById('artista-text').textContent = "Mi artista favorito es bad bunny.";
+        });
+
+        // Evento 6: Scroll
+        window.addEventListener('scroll', function() {
+            document.getElementById('pais-text').textContent = "Me gustaría visitar Colombia.";
+        });
+    </script>
+</body>
+</html>
